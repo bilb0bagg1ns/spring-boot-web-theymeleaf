@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Mock Payment Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- MOBILE SPECIFIC METAS -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../../css/main.css" />
+
+</head>
+<body>
+
+      <h2>Payment Information</h2>
+
+	  <p> Enter details of the Payment: </p>
+			 	
+		<form action="#" method="post" th:object="${payment}" th:action="@{/savePayment}">
+
+       <label for="payment" th:text="Payment"></label>          
+	   <div class="panel panel-info">
+   	      <div class="panel-heading"> 
+	          <div class="form-group">
+	            <label for="amount" th:text="Amount"></label>
+	            <input  class="form-control" type="text" th:field="*{amount}" />
+	          </div>
+	          <div class="form-group ">
+	            <label for="register" th:text="Register"></label>
+	            <input  class="form-control" type="text" th:field="*{register}" />
+	          </div>          
+          </div>
+       </div>     	   
+
+       <label for="billing" th:text="BillingInformation"></label>          
+	   <div class="panel panel-info">
+   	      <div class="panel-heading"> 
+	          <div class="form-group">
+	            <label for="firstName" th:text="FirstName"></label>
+	            <input  class="form-control" type="text" th:field="*{firstName}" />
+	          </div>
+	          <div class="form-group ">
+	            <label for="lastName" th:text="LastName"></label>
+	            <input  class="form-control" type="text" th:field="*{lastName}" />
+	          </div>
+	          <div class="form-group ">
+	            <label for="companyName" th:text="CompanyName"></label>
+	            <input  class="form-control" type="text" th:field="*{companyName}" />
+	          </div>          	                    
+	          <div class="form-group ">
+	            <label for="address" th:text="Address"></label>
+	            <input  class="form-control" type="text" th:field="*{address}" />
+	          </div>          	                    
+	          <div class="form-group ">
+	            <label for="city" th:text="City"></label>
+	            <input  class="form-control" type="text" th:field="*{city}" />
+	          </div>
+	          <div class="form-group ">
+	            <label for="zip" th:text="Zip"></label>
+	            <input  class="form-control" type="text" th:field="*{zip}" />
+	          </div>          	                    
+	          <div class="form-group ">
+	            <label for="email" th:text="Email"></label>
+	            <input  class="form-control" type="text" th:field="*{email}" />
+	          </div>          	                    
+	                    	                    
+          </div>
+       </div>     	   
+
+
+	          
+<div class="panel-body">
+</div>
+      
+      					 
+		  <div class="btn-toolbar">
+              <button class="btn btn-danger" type="submit" name="action" value="cancel" th:text="Cancel"></button>
+              <div class="col-lg-10"></div>              
+              <button class="btn btn-success" type="submit" th:text="PayNow"></button>
+          </div>
+        
+	</form>
+  </body>
+</html>

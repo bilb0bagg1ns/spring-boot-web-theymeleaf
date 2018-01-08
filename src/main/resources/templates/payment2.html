@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Mock Payment Page</title>
+
+  <meta charset="utf-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <!-- <h2>Responsive </h2> -->
+
+<!--   
+  <h2>Aspect ratio 4:3 - embedding and iFrame</h2>
+  <div class="embed-responsive embed-responsive-4by3">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/iGXYZwZEZa0"></iframe>
+  </div>
+  -->
+ 
+<!--   
+  <h2>Aspect ratio 16:9</h2>
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XGSy3_Czz8k"></iframe>
+  </div>
+-->  
+</div>
+ 
+ 
+    <center><h2>Payment Information</h2></center>
+
+	<p > Enter details of the Payment: </p>
+			 	
+	<form action="#" method="post" th:object="${payment}" th:action="@{/savePayment}">
+
+<div class="w3-row-padding">
+<div class="w3-third">
+       <label style="font-size:1.5vw;" for="payment" th:text="Payment"></label>          
+	   <div class="panel panel-info">
+   	      <div class="panel-heading"> 
+	          <div class="form-group">
+	            <label for="amount" th:text="Amount"></label>
+	            <input  class="form-control" type="text" th:field="*{amount}" />
+	          </div>
+	          <div class="form-group ">
+	            <label for="register" th:text="Register"></label>
+	            <input  class="form-control" type="text" th:field="*{register}" />
+	          </div>          
+          </div>
+       </div>     	   
+ </div>
+ <div class="w3-third">
+       <label style="font-size:2vw;"  for="billing" th:text="Billing"></label>          
+	   <div class="panel panel-info">
+   	      <div class="panel-heading"> 
+	          <div class="form-group">
+	            <label for="firstName" th:text="FirstName"></label>
+	            <input  class="form-control" type="text" th:field="*{firstName}" />
+	          </div>
+	          <div class="form-group ">
+	            <label for="lastName" th:text="LastName"></label>
+	            <input  class="form-control" type="text" th:field="*{lastName}" />
+	          </div>
+	          <div class="form-group ">
+	            <label for="companyName" th:text="CompanyName"></label>
+	            <input  class="form-control" type="text" th:field="*{companyName}" />
+	          </div>          	                    
+	          <div class="form-group ">
+	            <label for="address" th:text="Address"></label>
+	            <input  class="form-control" type="text" th:field="*{address}" />
+	          </div>          	                    
+	          <div class="form-group ">
+	            <label for="city" th:text="City"></label>
+	            <input  class="form-control" type="text" th:field="*{city}" />
+	          </div>
+	          <div class="form-group ">
+	            <label for="zip" th:text="Zip"></label>
+	            <input  class="form-control" type="text" th:field="*{zip}" />
+	          </div>          	                    
+	          <div class="form-group ">
+	            <label for="email" th:text="Email"></label>
+	            <input  class="form-control" type="text" th:field="*{email}" />
+	          </div>          	                    
+	                    	                    
+          </div>
+       </div>     	   
+ </div>
+</div>
+	          
+<div class="panel-body">
+</div>
+      
+      					 
+		  <div class="btn-toolbar">
+              <button class="btn btn-danger" type="submit" name="action" value="cancel" th:text="Cancel"></button>
+              <div class="col-lg-10"></div>              
+              <button class="btn btn-success" type="submit" th:text="PayNow"></button>
+          </div>
+        
+	</form>
+	
+	
+  </body>
+</html>

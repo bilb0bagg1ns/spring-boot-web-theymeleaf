@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Mock Payment Page</title>
+
+<style>
+   html,body { height: 100% }
+   .stockIframe {  width:100%; height:100%; }
+   .stockIframe iframe {  width:100%; height:100%; border:0;overflow:hidden }
+   
+   <!--https://www.sitepoint.com/community/t/responsive-iframe-help-needed-please/214453/2 -->
+   
+   .content {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+}
+.embed-container {
+    height: 100vh;
+    width: 100%;
+    padding-bottom: 50%;
+    position: relative;
+}
+.embed-container iframe {
+    min-width: 100%;
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+</style>
+</head>
+<body>
+<!-- 
+    <iframe src="https://localhost:8443/payment" height="100%" width="100" style="border:none;"></iframe>
+ -->    
+<div class="stockIframe ">
+<!--     <iframe src="https://localhost:8443/payment2" onload="autoResize(this)" height="100%" width="100"></iframe>  --> 
+    <iframe src="https://localhost:8443/payment2" height="100%" width="100"></iframe> 
+</div>
+
+
+<script>
+   function autoResize(i) {
+     var iframeHeight=
+     (i).contentWindow.document.body.scrollHeight;
+     (i).height=iframeHeight+20;
+   } 
+</script>    
+</body>
+</html>
